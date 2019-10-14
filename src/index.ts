@@ -1,27 +1,34 @@
-export type Selector<T, K> = (x: T) => K;
-
 export class SearchResult {
   constructor(public readonly found: boolean, public readonly index: number) {}
+}
+
+interface BinarySearchByOptions {
+  fromIndex?: number;
+  toIndex?: number;
 }
 
 export function binarySearchBy<T, K extends number | string>(
   haystack: ArrayLike<T>,
   needle: K,
-  selector: Selector<T, K>,
-  low = 0,
-  high = haystack.length - 1
+  selector: (el: T) => K,
+  options: BinarySearchByOptions = {}
 ): SearchResult {
   if (haystack.length === 0) {
     return { found: false, index: 0 };
   }
 
-  if (low < 0 || low >= haystack.length) {
+  const { fromIndex = 0, toIndex = haystack.length - 1 } = options;
+
+  if (fromIndex < 0 || fromIndex >= haystack.length) {
     throw new RangeError('Invalid lower bound.');
   }
 
-  if (high < low || high >= haystack.length) {
+  if (toIndex < fromIndex || toIndex >= haystack.length) {
     throw new RangeError('Invalid upper bound.');
   }
+
+  let low = fromIndex;
+  let high = toIndex;
 
   while (low <= high) {
     const mid = low + ((high - low) >>> 1);
@@ -38,4 +45,4 @@ export function binarySearchBy<T, K extends number | string>(
   return new SearchResult(false, low); // Not found
 }
 
-export const identity = <T>(x: T): T => x;
+export const identity = <T extends number | string>(x: T): T => x;

@@ -48,13 +48,16 @@ describe('5 elements', () => {
   describe('error handling', () => {
     test('throw range error if lower bound is to low', () => {
       expect(() => {
-        binarySearchBy(haystack, 0, identity, -1);
+        binarySearchBy(haystack, 0, identity, { fromIndex: -1 });
       }).toThrow();
     });
 
     test('throw range error if upper bound bound is to high', () => {
       expect(() => {
-        binarySearchBy(haystack, 0, identity, 0, haystack.length);
+        binarySearchBy(haystack, 0, identity, {
+          fromIndex: 0,
+          toIndex: haystack.length
+        });
       }).toThrow();
     });
   });
