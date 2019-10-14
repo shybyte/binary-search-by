@@ -8,11 +8,11 @@
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
-    "lint": "eslint src/*.ts test/*.ts -f visualstudio",
-    "lint:prettier": "prettier -c ",
+    "test": "run-s test:*",
+    "test:lint": "eslint src/*.ts test/*.ts -f visualstudio",
+    "test:jest": "jest",
     "test:mutation": "stryker run",
-    "prepublishOnly": "run-s lint test build"
+    "prepublishOnly": "run-s test build"
   },
   "author": "Marco Stahl",
   "license": "MIT",
