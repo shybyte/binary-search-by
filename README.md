@@ -6,6 +6,8 @@ An NPM package for searching in sorted arrays fast and comfortable by a selector
 
 ## Installation
 
+[![NPM](https://nodei.co/npm/binary-search-by.png)](https://www.npmjs.com/package/binary-search-by)
+
 ```bash
     npm i binary-search-by
 ```
