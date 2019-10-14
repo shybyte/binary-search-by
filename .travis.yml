@@ -8,4 +8,6 @@ before_script:
   - ./cc-test-reporter before-build
 after_script:
   - ls -l tmp/reports/coverage
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t lcov tmp/reports/coverage/lcov.info
+  - mkdir -p coverage
+  - cp tmp/reports/coverage/lcov.info coverage/
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -t lcov
