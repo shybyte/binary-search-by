@@ -12,9 +12,10 @@
     "test": "run-s test:*",
     "test:lint": "eslint src/*.ts test/*.ts -f visualstudio",
     "test:jest": "jest",
-    "test:markdown": "markdown-doctest",
+    "test:markdown": "run-s build markdownDoctest",
     "test:mutation": "stryker run",
-    "prepublishOnly": "run-s clean test build"
+    "prepublishOnly": "run-s clean test build",
+    "markdownDoctest": "markdown-doctest"
   },
   "files": [
     "dist"
