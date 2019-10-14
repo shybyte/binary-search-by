@@ -20,11 +20,11 @@ export function binarySearchBy<T, K extends number | string>(
   const { fromIndex = 0, toIndex = haystack.length - 1 } = options;
 
   if (fromIndex < 0 || fromIndex >= haystack.length) {
-    throw new RangeError('Invalid lower bound.');
+    throw new RangeError('Invalid fromIndex.');
   }
 
   if (toIndex < fromIndex || toIndex >= haystack.length) {
-    throw new RangeError('Invalid upper bound.');
+    throw new RangeError('Invalid toIndex.');
   }
 
   let low = fromIndex;

@@ -49,7 +49,22 @@ describe('5 elements', () => {
     test('throw range error if lower bound is to low', () => {
       expect(() => {
         binarySearchBy(haystack, 0, identity, { fromIndex: -1 });
-      }).toThrow();
+      }).toThrow(new RangeError('Invalid fromIndex.'));
+    });
+
+    test('throw range error if lower bound is to high', () => {
+      expect(() => {
+        binarySearchBy(haystack, 0, identity, { fromIndex: haystack.length });
+      }).toThrow(new RangeError('Invalid fromIndex.'));
+    });
+
+    test('throw range error if upper bound bound is to low', () => {
+      expect(() => {
+        binarySearchBy(haystack, 0, identity, {
+          fromIndex: 3,
+          toIndex: 2
+        });
+      }).toThrow(new RangeError('Invalid toIndex.'));
     });
 
     test('throw range error if upper bound bound is to high', () => {
@@ -58,7 +73,7 @@ describe('5 elements', () => {
           fromIndex: 0,
           toIndex: haystack.length
         });
-      }).toThrow();
+      }).toThrow(new RangeError('Invalid toIndex.'));
     });
   });
 });

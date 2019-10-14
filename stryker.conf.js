@@ -11,6 +11,6 @@ module.exports = function(config) {
     htmlReporter: {
       baseDir: 'tmp/reports/mutation/html'
     },
-    thresholds: { high: 80, low: 60, break: 80 },
+    thresholds: { high: 80, low: 60, break: 100 }
   });
 };
