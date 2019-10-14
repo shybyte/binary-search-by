@@ -35,8 +35,7 @@ export function binarySearchBy<T, K extends number | string>(
       return new SearchResult(true, mid); // Found
     }
   }
-
   return new SearchResult(false, low); // Not found
 }
 
-export const identity = <T>(x: T) => x;
+export const identity = <T>(x: T): T => x;
