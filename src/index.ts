@@ -7,7 +7,9 @@ interface BinarySearchByOptions {
   toIndex?: number;
 }
 
-export function binarySearchBy<T, K extends number | string>(
+export type HasOrder = number | string | boolean | Date;
+
+export function binarySearchBy<T, K extends HasOrder>(
   haystack: ArrayLike<T>,
   needle: K,
   selector: (el: T) => K,
@@ -45,4 +47,4 @@ export function binarySearchBy<T, K extends number | string>(
   return new SearchResult(false, low); // Not found
 }
 
-export const identity = <T extends number | string>(x: T): T => x;
+export const identity = <T extends HasOrder>(x: T): T => x;
