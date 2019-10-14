@@ -1,6 +1,7 @@
 # binary-search-by
 
 [![Build Status](https://travis-ci.org/shybyte/binary-search-by.svg?branch=master)](https://travis-ci.org/shybyte/binary-search-by)
+[![npm](https://img.shields.io/npm/v/binary-search-by.svg)](https://www.npmjs.com/package/binary-search-by)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d5066b180c3bf3a3c0b8/maintainability)](https://codeclimate.com/github/shybyte/binary-search-by/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d5066b180c3bf3a3c0b8/test_coverage)](https://codeclimate.com/github/shybyte/binary-search-by/test_coverage)
 
