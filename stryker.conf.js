@@ -7,6 +7,10 @@ module.exports = function(config) {
     transpilers: [],
     coverageAnalysis: 'off',
     tsconfigFile: 'tsconfig.json',
-    mutate: ['src/**/*.ts']
+    mutate: ['src/**/*.ts'],
+    htmlReporter: {
+      baseDir: 'tmp/reports/mutation/html'
+    },
+    thresholds: { high: 80, low: 60, break: 80 },
   });
 };
