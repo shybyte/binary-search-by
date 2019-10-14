@@ -1,6 +1,6 @@
 {
   "name": "binary-search-by",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Search in sorted arrays fast and comfortable by a selector",
   "homepage": "https://github.com/shybyte/binary-search-by",
   "repository": "https://github.com/shybyte/binary-search-by",
