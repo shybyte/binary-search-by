@@ -1,6 +1,7 @@
 # binary-search-by
 
 [![Build Status](https://travis-ci.org/shybyte/binary-search-by.svg?branch=master)](https://travis-ci.org/shybyte/binary-search-by)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d5066b180c3bf3a3c0b8/test_coverage)](https://codeclimate.com/github/shybyte/binary-search-by/test_coverage)
 
 An NPM package for searching in sorted arrays fast and comfortable by a selector.
 
