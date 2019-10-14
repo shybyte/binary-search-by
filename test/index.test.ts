@@ -59,3 +59,26 @@ describe('5 elements', () => {
     });
   });
 });
+
+describe('search by number key', () => {
+  const cities = [
+    { distance: 0, name: 'Berlin' },
+    { distance: 149, name: 'Leipzig' },
+    { distance: 217, name: 'Jena' },
+    { distance: 263, name: 'Wurzbach' }
+  ];
+
+  test('find it', () => {
+    expect(binarySearchBy(cities, 217, city => city.distance)).toEqual({
+      found: true,
+      index: 2
+    });
+  });
+
+  test('find insertion point', () => {
+    expect(binarySearchBy(cities, 230, city => city.distance)).toEqual({
+      found: false,
+      index: 3
+    });
+  });
+});
