@@ -1,0 +1,43 @@
+{
+  "name": "binary-search-by",
+  "version": "0.1.0",
+  "description": "Search in sorted arrays fast and comfortable by a selector",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Marco Stahl",
+  "license": "MIT",
+  "devDependencies": {
+    "@stryker-mutator/core": "^2.1.0",
+    "@stryker-mutator/html-reporter": "^2.1.0",
+    "@stryker-mutator/jest-runner": "^2.1.0",
+    "@stryker-mutator/typescript": "^2.1.0",
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "statements": 100,
+        "lines": 100
+      }
+    },
+    "coverageDirectory": "tmp/coverage"
+  }
+}
